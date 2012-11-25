@@ -12,7 +12,7 @@ chdir '..';
 
 
 my $cmd = "zip -r regex-maven.zip regex-maven -x \\*/.git/\\* 0x \\*.swp";
-foreach my $f (qw(app.psgi build.pl README.txt)) {
+foreach my $f (qw(app.psgi build.pl README.txt .gitignore)) {
     $cmd .= " -x regex-maven/$f";
 }
 
