@@ -20,19 +20,35 @@ Regular Expressions Chate sheet. As with the other part of the application, this
 </p>
 <ul>
 <li>. - Any character except newline</li>
-<li>^ - At the beginnin of the regex, require match at the beginning of the string.</li>
-<li>^ - As the first character in a character class, negate the characer class.</li>
-<li>$ - At the end of the regex, require match at the end of the string.</li>
 <li>[] - Character class, match any character in listed in the class.</li>
 <li>() - Grouping and capturing.</li>
 <li>\1 - Internal variable representing the content of the first capture.</li>
 <li>| - Alternation</li>
+</ul>
+<h2>Anchors</h2>
+<ul>
+<li>^ - At the beginnin of the regex, require match at the beginning of the string.</li>
+<li>^ - As the first character in a character class, negate the characer class.</li>
+<li>$ - At the end of the regex, require match at the end of the string.</li>
+<li>\b - Beginning or end of word.</li>
+</ul>
+<h2>Quantifiers</h2>
+<ul>
 <li>* - Quanitier: 0 or more times.</li>
 <li>+ - Quanitier: 1 or more time.</li>
 <li>? - Quanitier: 0 or 1 times.</li>
 <li>{n, m} - Quanitier: Between n and m times.</li>
 <li>{n,} - Quanitier: n or more times.</li>
 <li>{n} - Quanitier: exactly n times.</li>
+</ul>
+<h2>Character classes</h2>
+<ul>
+<li>\d - Digit. The same as [0-9].</li>
+<li>\w - Word character. The same as [a-zA-Z0-9_].</li>
+<li>\s - White space.</li>
+<li>\D - Non digit. The same as [^\d].</li>
+<li>\W - Non word character. The same as [^\w].</li>
+<li>\S - Non white space. The same as [^\s].</li>
 </ul>
 </div>
 </div>
