@@ -52,17 +52,51 @@ function check_quiz() {
     $( "#success" ).popup( "open" )
 }
 
-var quizes = {
-    "cases" : [ ["#1#", "t"], ["#11#", "f"], ["##", "f"], ["#.#", "t" ] ],
-    "regex" : "#[1-5.]#"
-   };
+var current_quiz = -1;
+var quizes = [
+    {
+        "cases" : [ ["one", "f"], ["two", "f"], ["three", "t"], ["four", "f" ] ],
+        "regex" : "(.)\\1"
+    },
+    {
+        "cases" : [ ["xx", "f"], ["xxx", "f"], ["xxxx", "t"], ["xxxxx", "t" ] ],
+        "regex" : "x{4}"
+    },
+    {
+        "cases" : [ ["#1#", "t"], ["#11#", "f"], ["##", "f"], ["#.#", "t" ] ],
+        "regex" : "#[1-5.]#"
+    },
+    {
+        "cases" : [ ["#1#", "f"], ["#a#", "t"], ["#ab#", "f"], ["#aa#", "f" ], ["##", "f"] ],
+        "regex" : "#[abc]#"
+    },
+    {
+        "cases" : [ ["#1#", "f"], ["#a#", "t"], ["#ab#", "t"], ["#aa#", "t" ], ["##", "f"] ],
+        "regex" : "#[abc]+#"
+    },
+    {
+        "cases" : [ ["#1#", "f"], ["#a#", "t"], ["#ab#", "t"], ["#aa#", "t" ], ["##", "t"] ],
+        "regex" : "#[abc]*#"
+    },
+    {
+        "cases" : [ ["#1#", "f"], ["#a#", "t"], ["#ab#", "f"], ["#aa#", "t" ], ["##", "f"] ],
+        "regex" : "#([abc])\\1?#"
+    }
+];
 
 function show_quiz() {
-    var question = "Which one or more of strings are matched by the following regex? <b>" + quizes["regex"] + "</b>";
-    var quiz = '<input type="hidden" name="count" id="count" value="' + quizes["cases"].length + '" />\n';
-    for (var i = 0; i < quizes["cases"].length; i++) {
-        quiz += '<input type="hidden" id="expected-' + i + '" value="' + (quizes["cases"][i][1] == 't' ? 'true' : 'false')  + '" />\n';
-        quiz += '<input type="checkbox" name="checkbox-' + i + '" id="checkbox-mini-' + i + '" class="custom" data-mini="true" /><label for="checkbox-mini-' + i + '">' + quizes["cases"][i][0] + '</label>\n';
+    current_quiz++;
+    if (current_quiz >= quizes.length) {
+        $( "#nomore" ).popup( "open" )
+        return;
+    }
+    var q = quizes[current_quiz];
+
+    var question = "Which one or more of strings are matched by the following regex? <b>" + q["regex"] + "</b>";
+    var quiz = '<input type="hidden" name="count" id="count" value="' + q["cases"].length + '" />\n';
+    for (var i = 0; i < q["cases"].length; i++) {
+        quiz += '<input type="hidden" id="expected-' + i + '" value="' + (q["cases"][i][1] == 't' ? 'true' : 'false')  + '" />\n';
+        quiz += '<input type="checkbox" name="checkbox-' + i + '" id="checkbox-mini-' + i + '" class="custom" data-mini="true" /><label for="checkbox-mini-' + i + '">' + q["cases"][i][0] + '</label>\n';
     }
 
     $('#question').html(question);
