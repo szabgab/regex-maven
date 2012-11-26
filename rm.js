@@ -10,3 +10,32 @@ function hello() {
 // var pages = document.querySelector('#pages');
 // pages.classList.contains('left')
 // var pages = document.querySelector('#pages');
+//
+//
+
+//function show_cheat_all() {
+//    var h1  = document.querySelector('h1');
+//
+//}
+//
+//function load_cheat() {
+//    var cheat_all = document.querySelector('button#cheat-all');
+//    cheat_all.addEventListener('click', show_cheat_all );
+//}
+
+$('div.ui-page').live("swipeleft", function(){
+    var nextpage = $(this).next('div[data-role="page"]');
+    // swipe using id of next page if exists
+    if (nextpage.length > 0) {
+        $.mobile.changePage(nextpage, 'slide');
+    }
+});
+
+$('div.ui-page').live("swiperight", function(){
+    var prevpage = $(this).prev('div[data-role="page"]');
+    // swipe using id of next page if exists
+    if (prevpage.length > 0) {
+        $.mobile.changePage(prevpage, 'slide', true);
+    }
+});
+

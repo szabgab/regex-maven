@@ -37,7 +37,7 @@ button.css3button {
 		#242424 50%,
 		#000000);
 	background: -webkit-gradient(
-		linear, left top, left bottom, 
+		linear, left top, left bottom,
 		from(#a3a3a3),
 		color-stop(0.50, #3b3b3b),
 		color-stop(0.50, #242424),
@@ -79,6 +79,9 @@ button.css3button {
     margin-top: 2px;
     margin-left: 10px;
 }
+a {
+   text-decoration: none;
+}
 
 #btn-home {
     float: left;
@@ -92,3 +95,6 @@ button.css3button {
   font-size: 18px;
   margin: 10px;
 }
+
+
+
