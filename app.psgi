@@ -7,7 +7,7 @@ use File::Basename qw(dirname);
 #use Plack::Builder;
 use Plack::App::Directory;
 
-my $root = dirname abs_path($0);
+my $root = dirname(abs_path($0)) . '/app';
 my $app = Plack::App::Directory->new({ root => $root })->to_app;
 
 
