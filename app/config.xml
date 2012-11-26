@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "com.regexmaven.app"
-    versionCode="14"
-    version   = "0.0.14">
+    versionCode="15"
+    version   = "0.0.15">
   <name>Regex Maven</name>
   <description>
     Helping you learn and remember(!) Regular Expression in Perl, Python, Ruby, PHP ...
