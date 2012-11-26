@@ -20,6 +20,7 @@
     <a href="#learn-main" data-role="button">Learn</a>
     <a href="#quiz-main" data-role="button">Quiz</a>
     <a href="#cheat-list" data-role="button">Cheat</a>
+    <a href="#try" data-role="button">Try</a>
     </div>
 
     <div data-role="footer">
@@ -36,7 +37,6 @@
     The Regex Maven version 0.0.14 is Copyright 2012 Gabor Szabo.
     For more information, please visit
     <a href="http://regexmaven.com/">http://regexmaven.com/</a>.
-    (Once it will be live.)
     </div>
 
     <div data-role="footer">
@@ -109,10 +109,8 @@
 
     <p id="question">
     </p>
-    <form  data-ajax="true">
-    </form>
-      <div id="quiz">
-      </div>
+    <div id="quiz">
+    </div>
     <button type="submit" onClick="check_quiz();" name="submit" id="submit" value="submit-value" data-mini="true">Verify</button>
     </div>
 
@@ -223,6 +221,26 @@
 <a href="#cheat-list" data-role="button">List</a>
 </div>
 
+</div>
+
+<!-- Try -->
+<div  data-role="page" id="try">
+  <div data-role="header">
+  <h2>Try</h2>
+  </div>
+
+  <div data-role="content">
+  <label for="regex">regex:</label><input type="text" name="regex" id="regex" class="custom" data-mini="true" value="([a-c])\1" />
+  <label for="text">text:</label><input type="text" name="txt" id="txt" class="custom" data-mini="true" value="xabyaad"/>
+  <button type="submit" onClick="run_regex();" name="submit" id="submit" value="submit-value" data-mini="true">Run</button>
+
+  <div id="result">
+  </div>
+  </div>
+
+  <div data-role="footer">
+  <a href="#index-menu" data-role="button">Home</a>
+  </div>
 </div>
 
 

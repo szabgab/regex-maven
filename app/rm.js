@@ -104,4 +104,22 @@ function show_quiz() {
 }
 
 
+function run_regex() {
+    var pattern = document.getElementById('regex').value;
+    var text  = document.getElementById('txt').value;
+    try {
+        var re = new RegExp(pattern);
+    } catch(e) {
+        $('#result').html( '' + e );
+        return;
+    }
+    // text.search(pattern)
+    var result = text.match( re );
+    if (result) {
+        $('#result').html( result[0] );
+    } else {
+        $('#result').html( 'No match' );
+    }
+}
+
 
