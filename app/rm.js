@@ -52,4 +52,22 @@ function check_quiz() {
     $( "#success" ).popup( "open" )
 }
 
+var quizes = {
+    "cases" : [ ["#1#", "t"], ["#11#", "f"], ["##", "f"], ["#.#", "t" ] ],
+    "regex" : "#[1-5.]#"
+   };
+
+function show_quiz() {
+    var question = "Which one or more of strings are matched by the following regex? <b>" + quizes["regex"] + "</b>";
+    var quiz = '<input type="hidden" name="count" id="count" value="' + quizes["cases"].length + '" />\n';
+    for (var i = 0; i < quizes["cases"].length; i++) {
+        quiz += '<input type="hidden" id="expected-' + i + '" value="' + (quizes["cases"][i][1] == 't' ? 'true' : 'false')  + '" />\n';
+        quiz += '<input type="checkbox" name="checkbox-' + i + '" id="checkbox-mini-' + i + '" class="custom" data-mini="true" /><label for="checkbox-mini-' + i + '">' + quizes["cases"][i][0] + '</label>\n';
+    }
+
+    $('#question').html(question);
+    $('#quiz').html(quiz).trigger('create');
+}
+
+
 

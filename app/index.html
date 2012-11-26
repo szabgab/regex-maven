@@ -107,21 +107,15 @@
     <div data-role="content">
     <p>
     Here you will find a Quiz for Regular Expressions. For example a simple one will look like this:
+    <button type="submit" onClick="show_quiz();" name="show" id="show" value="submit-value" data-mini="true">Show</button>
     </p>
-    <p>
-    Which one or more of strings are matched by the following regex? <b>#[1-5.]#</b>
+
+    <p id="question">
     </p>
     <form  data-ajax="true">
     </form>
-    <input type="hidden" name="count" id="count" value="4" />
-    <input type="hidden" id="expected-0" value="true" />
-    <input type="hidden" id="expected-1" value="false" />
-    <input type="hidden" id="expected-2" value="false" />
-    <input type="hidden" id="expected-3" value="true" />
-    <input type="checkbox" name="checkbox-0" id="checkbox-mini-0" class="custom" data-mini="true" /><label for="checkbox-mini-0">#1#</label>
-    <input type="checkbox" name="checkbox-1" id="checkbox-mini-1" class="custom" data-mini="true" /><label for="checkbox-mini-1">#11#</label>
-    <input type="checkbox" name="checkbox-2" id="checkbox-mini-2" class="custom" data-mini="true" /><label for="checkbox-mini-2">##</label>
-    <input type="checkbox" name="checkbox-3" id="checkbox-mini-3" class="custom" data-mini="true" /><label for="checkbox-mini-3">#.#</label>
+      <div id="quiz">
+      </div>
     <button type="submit" onClick="check_quiz();" name="submit" id="submit" value="submit-value" data-mini="true">Verify</button>
     </div>
 
