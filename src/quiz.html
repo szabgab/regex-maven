@@ -1,0 +1,29 @@
+<div data-role="page" id="quiz-main">
+    <div data-role="header">
+    <h2>Quiz</h2>
+    </div>
+
+    <div data-role="content">
+    <button type="submit" onClick="show_quiz();" name="show" id="show" value="submit-value" data-mini="true">Show Next</button>
+
+    <p id="question">
+    </p>
+    <div id="quiz">
+    </div>
+    <button type="submit" onClick="check_quiz();" name="submit" id="submit" value="submit-value" data-mini="true">Verify</button>
+    </div>
+
+    <div data-role="popup" id="failure">
+	<p>Failure<p>
+    </div>
+    <div data-role="popup" id="success">
+	<p>Success<p>
+    </div>
+    <div data-role="popup" id="nomore">
+	<p>Sorry, there are no more quizes.<p>
+    </div>
+
+    <div data-role="footer">
+    <a href="index.html" data-role="button">Home</a>
+    </div>
+</div>
