@@ -11,6 +11,25 @@ Regex Maven
 * Even a tool using JavaScript to actually test Regular Expressions.
 
 
+Development
+============
+
+Have Perl and install Plack and Template.
+Windows users can install DwimPerl http://dwimperl.com/
+
+run     perl generate.pl
+to generate the html files from the templates.
+
+Run plackup in the main direstory of the application to launch the development
+web server and then browse to http://localhost:5000/index.html
+
+
+Web site
+=========
+The source code of the http://regexmaven.com/ web site is in the www/ subdirectory.
+running   plackup www.psgi    will launch the development web server.
+
+
 Contributor agreement
 =======================
 
