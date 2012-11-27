@@ -36,8 +36,14 @@ my $app = sub {
   }
 };
 
+sub {
+  my $env = shift;
+ 
+  my $request = Plack::Request->new($env);
 
-builder {
-   mount '/*.html' => builder { $app },
-   mount '/'      => builder { $static };
+  if ($request->path_info =~ /\.html/) {
+      return $app->($env);
+  }
+  return $static->($env);
 }
+
