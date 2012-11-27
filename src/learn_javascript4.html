@@ -1,0 +1,20 @@
+<div  data-role="page">
+  <div data-role="header">
+  <h2>Reusable regex</h2>
+  </div>
+
+  <div data-role="content">
+  <p>
+  We can create a RegExp object that we can easily pass around as a parameter
+  and use it in several calls:
+  </p>
+<pre>
+var re = new RegExp(/[abc]/);
+"xaybzc".match(re);
+</pre>
+    </div>
+
+    <div data-role="footer">
+    <a href="learn_main.html" data-role="button">Main</a>
+    </div>
+</div>

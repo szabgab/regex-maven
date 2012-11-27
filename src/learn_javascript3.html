@@ -1,0 +1,32 @@
+<div  data-role="page">
+  <div data-role="header">
+  <h2>JavaScript</h2>
+  </div>
+
+  <div data-role="content">
+<pre>
+var str = "xyz";
+str.search(/x/); // 0
+str.search(/y/); // 1
+str.search(/w/); // -1
+str.match(/y/);
+// ['y', index: 1, input: 'xyz']
+
+str.match(/w/); // null
+
+str.match(/../);
+// ['xy', index: 0, input: 'xyz']
+
+str.search(/.(.)/);
+// ['xy', 'y', index: 0, input: 'xyz']
+
+str.search(/(.)(.)/);
+// ['xy', 'x', 'y', index: 0, input: 'xyz']
+</pre>
+    </div>
+
+    <div data-role="footer">
+    <a href="learn_main.html" data-role="button">Main</a>
+    <a href="learn_javascript4.html" data-role="button">Next</a>
+    </div>
+</div>
