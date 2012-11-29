@@ -100,7 +100,8 @@ function show_quiz() {
     }
 
     $('#question').html(question);
-    $('#quiz').html(quiz).trigger('create');
+    $('#quiz').html(quiz);
+    $('#quiz').trigger('create');
 }
 
 
