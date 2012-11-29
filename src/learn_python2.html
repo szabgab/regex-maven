@@ -1,0 +1,26 @@
+<div  data-role="page">
+  <div data-role="header">
+  <h2>Python - match</h2>
+  </div>
+
+  <div data-role="content">
+  <p>
+  The <b>re</b> package also provides a <b>match</b> method.
+  It is similar to the <b>search</b> method but it only matches
+  at the beginning of the string. As if there was an implicit
+  <b>^</b> at the beginning of the regular expression.
+  </p>
+<pre>
+import re
+m = re.match(r'a', 'bac')
+print m # null
+
+m = re.match(r'b', 'bac')
+print m.group(0) # b
+</pre>
+    </div>
+
+    <div data-role="footer">
+    <a href="learn_main.html" data-role="button">Main</a>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div  data-role="page">
+  <div data-role="header">
+  <h2>Python</h2>
+  </div>
+
+  <div data-role="content">
+  <p>
+  In Python the <b>re</b> package provides the Regular Expression support.
+  The <b>search</b> method of the package will get a regular expression and a string.
+  It will return a match object or <b>None</b>, if there was no match.
+  The match object has a <b>group</b> method. Passing 0 to it will return
+  the substring that was matched. It is usually better to write the
+  Regular Expression as a "raw" string (preceding it with an <b>r</b>).
+  </p>
+<pre>
+import re
+match = re.search(r'a', 'bac')
+if match:
+   print match.group(0)   # a
+
+m = re.search(r'd', 'bac')
+print m    # None
+</pre>
+    </div>
+
+    <div data-role="footer">
+    <a href="learn_main.html" data-role="button">Main</a>
+    <a href="learn_python2.html" data-role="button">Next</a>
+    </div>
+</div>
