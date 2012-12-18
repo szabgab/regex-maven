@@ -104,6 +104,23 @@ function show_quiz() {
     $('#quiz').trigger('create');
 }
 
+function solve_quiz() {
+    var c = document.getElementById('count');
+    for (var i = 0; i < c.value; i++) {
+        var user_id = 'checkbox-mini-' + i;
+        var expected_id = 'expected-' + i;
+        var expected = document.getElementById(expected_id).value;
+//        alert(document.getElementById(user_id).checked);
+//        break;
+        if ('true' == expected) {
+            document.getElementById(user_id).checked = 'checked';
+        //alert(i)
+        } else {
+            document.getElementById(user_id).checked = false;
+        }
+    }
+    $('#quiz').trigger('create');
+}
 
 function run_regex() {
     var pattern = document.getElementById('regex').value;
