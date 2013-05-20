@@ -17,7 +17,7 @@ my ($versionCode, $version, $about) = get_versions();
 die if not $version;
 die if $version ne $versionCode or $version ne $about;
 
-my $cmd = "zip -r regex-maven-$version.zip app -x \\*/.git/\\* 0x \\*.swp";
+my $cmd = "zip -r regex-maven-$version.zip app -x \\*/.git/\\* -x \\*.swp";
 foreach my $f (qw(app.psgi build.pl README.txt .gitignore)) {
     $cmd .= " -x regex-maven/$f";
 }
